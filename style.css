@@ -1,0 +1,181 @@
+/* how to use this:
+1. install the stylus extension for chrome or firefox
+   https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne
+   https://addons.mozilla.org/firefox/addon/styl-us/
+2. open speedrun.com, click on the extension and in "write a style for" select "speedrun.com"
+3. copy/paste the contents of this gist: https://gist.github.com/shenef/3dd4b99e74882873d7fb45cb5549f5b1
+
+if you have any suggestions or issues you can contact me on discord (shenef#1269), speedrun.com or comment on this gist */
+
+/* SETTINGS - change only the numbers */
+/* depending on your screen size you may have to tweak stuff */
+:root {
+  --page-width: 85%; /* srcom default: 1140px */
+  --video-height: 87vh; /* video height on run pages */
+  --profile-pic-size: 150px;
+  --forum-post-width: 60ch; /* shorter lines are easier to read, recommended: 60ch */
+}
+/* END OF SETTINGS */
+
+/* ------------------------------------------------- */
+
+/* image size and scaling for usericons and trophys  */
+img.usericon, img.trophy, img.favicon-16 {
+  max-width: 18px !important;
+  max-height: unset !important;
+  height: unset !important;
+}
+
+/* profile picture size and scaling */
+img.userpicture {
+  max-width: var(--profile-pic-size) !important;
+  max-height: 500px !important;
+}
+
+p > img.userpicture {
+  width: 150px;
+}
+
+/* make user and game names larger */
+p span.username, p.game-name {
+  font-size: 1.4em;
+}
+
+/* make game names more readable */
+body.dark .game-name a, body.light .game-name a {
+  color: unset;
+}
+
+/* game and front page leaderboard alignment*/
+#leaderboarddiv > table > tbody > tr > td, #leaderboarddiv > table > tbody > tr > th, #leaderboard-wrapper > table > tbody > tr > td {
+  text-align: left !important;
+}
+
+table.reverse-padding-sides.reverse-padding-bottom {
+  margin-left: -5px;
+  width: calc((100% + 2rem) - 1rem) !important;
+}
+
+/* improve empty marker visibility */
+.empty:after {
+  color: hsl(0, 0%, 85%) !important;
+  mix-blend-mode: difference;
+}
+
+/* dropdown menus */
+li > ul.dropdown-menu {
+  max-height: 500px !important;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: .5em;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: .15em;
+  background-color: #939393;
+}
+
+/* makes the leaderboard category list able to be wider  */
+div.col {
+  flex-basis: unset;
+}
+
+.nav-tabs.furious>.category {
+  min-width: 0% !important;
+}
+
+.category, .nav-item.dropdown {
+  flex-grow: 1;
+  text-align: center;
+}
+.nav-tabs, .nav-link, .panel.panel-tabbed {
+    border-top-left-radius: unset !important;
+    border-top-right-radius: unset !important;
+}
+
+/* aligns time on frontpage to the top */
+td.nobr.center.hidden-sm-down {
+  vertical-align: top !important;
+}
+/* allow front page leaderboard to be wider and fix font size*/
+.old-leaderboard {
+  max-width: 100% !important;
+  font-size: .91em !important;
+}
+
+/* controls page width in windows wider than 1600px */
+@media (min-width: 1600px) {
+  .container {
+    max-width: var(--page-width);
+  }
+}
+
+/* video height */
+iframe.youtube, iframe.twitch {
+  height: var(--video-height) !important;
+  width: 100% !important;
+}
+/* video height on front page */
+iframe.mb-3 {
+  height: 478px !important;;
+}
+
+/* assign fixed height to items in the games list to prevent layout shift */
+div.col-auto.mt-4.listcell.center {
+  height: 265px;
+}
+
+/* allow the messages window to be wider */
+#conversation-div-row div.col {
+  flex-basis: 0;
+}
+
+/* limit messages page height */
+#conversation-panel {
+  max-height: calc(100% - 1em) !important;
+}
+
+/* improve audit log layout */
+#resultListing div.mt-4 {
+  margin-top: 1em !important;
+  width: 22em;
+  overflow: auto;
+  padding-left: 1em;
+  margin-left: 1em;
+  background-color: #202020;
+  padding-top: 0.4em;
+  border: #ddd;
+  border-style: solid;
+  border-radius: 0.5em;
+  border-width: 0.2em;
+  flex-grow: 1;
+}
+
+.mt-4 > p, .mt-4 > h2 {
+  margin-bottom: 0em;
+  color: #ddd !important;
+}
+
+/* constrain forum post text width */
+.forumpost>p, .forumpost>div, .forumpost>blockquote {
+  max-width: var(--forum-post-width);
+}
+/* workaround to get videos in forum posts back to a normal size */
+.forumpost p>iframe {
+  width: 770px !important;
+  height: 433px !important;
+}
+
+/* remove front page side bar and change title font */
+/*#centerwidget {
+  width: 100% !important;
+  
+}
+.widget-title {
+  font-family: sans-serif !important;
+}
+div#widget.col-auto {
+  display: none;
+}*/
