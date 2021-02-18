@@ -6,7 +6,7 @@
 // @match        https://www.speedrun.com/*
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
-// @resource     CSS https://raw.githubusercontent.com/shenef/better-srcom/main/style.css?token=AE2UOWSKB6TPJKO77V5M6YDAF2NEU
+// @resource     CSS https://raw.githubusercontent.com/shenef/better-srcom/main/style.css
 // @run-at       document-end
 // ==/UserScript==
 
