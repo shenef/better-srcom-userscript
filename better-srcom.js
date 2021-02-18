@@ -6,12 +6,12 @@
 // @match        https://www.speedrun.com/*
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
-// @resource     extCSS https://gist.githubusercontent.com/shenef/3dd4b99e74882873d7fb45cb5549f5b1/raw/73734584e87794b79491b314cbabb6e7ee086b1e/srcom_stylus.css
+// @resource     CSS https://raw.githubusercontent.com/shenef/better-srcom/main/style.css?token=AE2UOWSKB6TPJKO77V5M6YDAF2NEU
 // @run-at       document-end
 // ==/UserScript==
 
 (function() {
     'use strict';
-    const css = GM_getResourceText("extCSS");
+    const css = GM_getResourceText("CSS");
     GM_addStyle(css);
 })();
