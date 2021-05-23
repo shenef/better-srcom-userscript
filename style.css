@@ -107,8 +107,8 @@ td.nobr.center.hidden-sm-down {
 
 /* controls page width in windows wider than 1600px */
 @media (min-width: 1600px) {
-  .container {
-    max-width: var(--page-width);
+  main.container.widened, main.container, nav>.container {
+    max-width: var(--page-width) !important;
   }
 }
 
@@ -214,3 +214,11 @@ td.forum-cell-new, td.forum-cell-user, td.forum-cell-posts, td.forum-cell-views,
 td.forum-cell-user, td.forum-cell-posts, td.forum-cell-views, td.forum-cell-lastpost {
     min-width: 5vw !important;
 }*/
+
+/* remove some ads */
+div.malediction.hero, div.malediction.sidebar_a, div.malediction.rail, div#extrabar, div.malediction.footer {
+    display: none;
+}
+div#centerbar {
+    width: 100%;
+}
