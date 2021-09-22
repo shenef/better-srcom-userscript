@@ -11,8 +11,8 @@ if you have any suggestions or issues you can contact me on discord (shenef#1269
 /* depending on your screen size you may have to tweak stuff */
 :root {
   --page-width: 85%; /* srcom default: 1140px */
-  --video-height: 87vh; /* video height on run pages */
-  --profile-pic-size: 150px;
+  --video-height: 70vh; /* video height on run pages */
+  --profile-pic-size: 120px;
   --forum-post-width: 70ch; /* shorter lines are easier to read, recommended: 70ch */
 }
 /* END OF SETTINGS */
@@ -216,7 +216,7 @@ td.forum-cell-user, td.forum-cell-posts, td.forum-cell-views, td.forum-cell-last
 }*/
 
 /* remove some ads */
-div.malediction.hero, div.malediction.sidebar_a, div.malediction.rail, div#extrabar, div.malediction.footer {
+div.malediction.hero, div.malediction.desktop_hero, div.malediction.sidebar_a, div.malediction.desktop_sidebar_a, div.malediction.rail, div#extrabar, div.malediction.footer {
     display: none;
 }
 div#centerbar {
